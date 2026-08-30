@@ -1,0 +1,74 @@
+/* =====================================================================
+   MEDIDAS DAX — Automação de Relatório Gerencial (Setor Saúde)
+   ---------------------------------------------------------------------
+   Tabela fato de referência: fVendas
+   (renomeie para o nome real da tabela no seu modelo: Tbl_BasePadronizada,
+   ao importar do Excel, ou o nome dado à vw_relatorio_gerencial_powerbi
+   ao importar do SQL — ver guia_powerbi_automacao_relatorio_gerencial.docx)
+   ===================================================================== */
+
+-- ---------------------------------------------------------------------
+-- Volume e faturamento
+-- ---------------------------------------------------------------------
+
+Total de Atendimentos =
+SUM ( fVendas[Atendimentos] )
+
+Receita Bruta Total =
+SUM ( fVendas[ReceitaBruta] )
+
+Glosas Total =
+SUM ( fVendas[Glosas] )
+
+Receita Líquida =
+[Receita Bruta Total] - [Glosas Total]
+
+% Glosa =
+DIVIDE ( [Glosas Total], [Receita Bruta Total] )
+
+-- ---------------------------------------------------------------------
+-- Custo e margem
+-- ---------------------------------------------------------------------
+
+Custo Total =
+SUM ( fVendas[CustoOperacional] )
+
+Margem =
+[Receita Bruta Total] - [Custo Total]
+
+% Margem =
+DIVIDE ( [Margem], [Receita Bruta Total] )
+
+-- ---------------------------------------------------------------------
+-- Operação
+-- ---------------------------------------------------------------------
+
+Ocupação Média =
+AVERAGE ( fVendas[TaxaOcupacao] )
+
+Tempo Médio de Atendimento =
+AVERAGE ( fVendas[TempoMedioAtendimento] )
+
+Ticket Médio =
+DIVIDE ( [Receita Bruta Total], [Total de Atendimentos] )
+
+-- ---------------------------------------------------------------------
+-- Comparativos de período (requer Dim_Calendario marcada como tabela
+-- de datas e relacionada à tabela fato)
+-- ---------------------------------------------------------------------
+
+Receita Bruta Total (Mês Anterior) =
+CALCULATE ( [Receita Bruta Total], DATEADD ( Dim_Calendario[Competencia], -1, MONTH ) )
+
+Variação Receita vs. Mês Anterior =
+DIVIDE ( [Receita Bruta Total] - [Receita Bruta Total (Mês Anterior)], [Receita Bruta Total (Mês Anterior)] )
+
+Receita Bruta Total (Acumulado no Ano) =
+TOTALYTD ( [Receita Bruta Total], Dim_Calendario[Competencia] )
+
+-- ---------------------------------------------------------------------
+-- Ranking entre unidades (usado em cartões e tabelas de destaque)
+-- ---------------------------------------------------------------------
+
+Ranking Unidade por Receita =
+RANKX ( ALL ( Dim_Unidade[Unidade] ), [Receita Bruta Total], , DESC )
