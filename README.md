@@ -2,8 +2,6 @@
 
 Case de automação de relatórios gerenciais para um cliente do setor de saúde com 8+ unidades, reduzindo o tempo de entrega de 5 dias para 1 dia.
 
-![Diagrama do fluxo da automação](diagrama_fluxo_automacao.svg)
-
 ## Contexto
 
 O cliente enfrentava um ciclo manual e repetitivo de produção de relatórios gerenciais mensais, consolidando dados de múltiplas unidades. O processo era lento, sujeito a erros humanos e consumia tempo desproporcional da equipe analítica.
@@ -39,9 +37,6 @@ Redução de 80% no tempo de entrega, de 5 dias para 1 dia, mantendo a qualidade
 | `dicionario_dados.md` | Definição de cada tabela e coluna usada no Excel e no modelo SQL/Power BI |
 | `diagrama_fluxo_automacao.svg` | Diagrama do fluxo completo, da fonte bruta ao relatório publicado |
 
-## Prévia do relatório
-
-![Mockup do dashboard no Power BI](mockup_dashboard_powerbi.svg)
 
 ## Fluxo da solução
 
