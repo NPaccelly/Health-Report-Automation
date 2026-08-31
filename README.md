@@ -48,5 +48,7 @@ Fontes brutas (8+ unidades, formatos divergentes) → Padronização (Power Quer
 
 ## Autora
 
-Nathália Paccelly — Especialista Sênior em Inteligência de Mercado, BI & Comunicação Estratégica
-[LinkedIn] · [Portfólio]
+**Nathália Paccelly** — Especialista Sênior em Inteligência de Mercado, BI
+& Comunicação Estratégica
+[LinkedIn](https://linkedin.com/in/nathaliapaccelly) ·
+[Portfólio](https://github.com/NPaccelly)
