@@ -2,6 +2,12 @@
 
 Case de automação de relatórios gerenciais para um cliente do setor de saúde com 8+ unidades, reduzindo o tempo de entrega de 5 dias para 1 dia.
 
+## Dashboard interativo
+
+[![Ver dashboard no Power BI](https://img.shields.io/badge/Power_BI-Visualizar_Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://app.powerbi.com/view?r=eyJrIjoiM2M4OWVhMmMtNmRjYi00NTViLWE5ZjktMmQ0NWJjZWE0MDY5IiwidCI6ImUxZDJhZjkzLTIzYmEtNDEzNi1hMGY3LTMxNzhmNGE4ZjcyZCJ9)
+
+> Visualização publicada em modo somente leitura (Power BI Publish to Web). Não requer login e não permite download do arquivo original.
+
 ## Contexto
 
 O cliente enfrentava um ciclo manual e repetitivo de produção de relatórios gerenciais mensais, consolidando dados de múltiplas unidades. O processo era lento, sujeito a erros humanos e consumia tempo desproporcional da equipe analítica.
